@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 21:12:24 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/27 15:15:32 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/05/30 21:52:00 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ template <typename T>
 typename T::iterator easyfind(T &container, int value)
 {
 	typename T::iterator it = find(container.begin(), container.end(), value);
+	if (it == container.end())
+		throw EasyFindException();
+	return it;
+}
+
+template <typename T>
+typename T::const_iterator easyfind(const T &container, int value)
+{
+	typename T::const_iterator it = find(container.begin(), container.end(), value);
 	if (it == container.end())
 		throw EasyFindException();
 	return it;

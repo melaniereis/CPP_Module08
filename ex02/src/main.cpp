@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:33:55 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/30 17:36:59 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/05/30 22:13:59 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,23 @@ void DifferentTypeTest();
 // ─────────────────────────────────────────────────────────────
 // 🚀 main()
 // ─────────────────────────────────────────────────────────────
+
+/**
+ * The main entry point of the program.
+ *
+ * Executes a series of tests to verify the functionality of the MutantStack class.
+ *
+ * The tests cover the following scenarios:
+ *  - Subject test to check basic functionality
+ *  - Const iterator test to ensure const correctness
+ *  - Reverse iterator test to validate reverse iteration
+ *  - Copy and assignment tests for object duplication
+ *  - Tests with different data types to ensure template compatibility
+ *
+ * After running all tests, prints a success message to the console.
+ *
+ * @return 0 upon successful completion of all tests.
+ */
 int main()
 {
 	std::cout << BGRN "\n\n📋===== MUTANTSTACK SIMULATION =====📋\n\n" RESET;
@@ -45,6 +62,14 @@ int main()
 }
 
 // Test function definitions
+
+/**
+ * Verifies the correctness of the MutantStack class by using the object as described
+ * in the subject.
+ *
+ * The test creates a MutantStack of int, adds 5 numbers to it, and then verifies
+ * that the correct elements are stored in the stack and can be iterated over.
+ */
 void SubjectTest()
 {
 	SEPARATOR("Subject Test");
@@ -80,6 +105,14 @@ void SubjectTest()
 }
 
 
+/**
+ * Tests const_iterator functionality of the MutantStack class.
+ *
+ * This test creates a MutantStack of integers, adds elements to it, and then
+ * uses a const_iterator to iterate over the elements. It verifies that the
+ * const_iterator correctly accesses the elements without modifying them,
+ * ensuring const correctness.
+ */
 void ConstIteratorTest()
 {
 	SEPARATOR("Const Iterator Test");
@@ -98,6 +131,16 @@ void ConstIteratorTest()
 		std::cout << BGRN << *cit << RESET << " ";
 	std::cout << std::endl;
 }
+
+/**
+ * Tests reverse_iterator and const_reverse_iterator functionality of the MutantStack class.
+ *
+ * This test creates a MutantStack of integers, adds elements to it, and then uses
+ * reverse_iterators to iterate over the elements in reverse order. It first demonstrates
+ * reverse iteration with a mutable reverse_iterator, printing the elements in reverse order.
+ * Then, it performs reverse iteration with a const_reverse_iterator, ensuring that the
+ * elements can be accessed in reverse without modification, verifying const correctness.
+ */
 
 void ReverseIteratorTest()
 {
@@ -125,6 +168,16 @@ void ReverseIteratorTest()
 	std::cout << std::endl;
 }
 
+/**
+ * Tests the copy constructor and assignment operator of the MutantStack class.
+ *
+ * This test creates an original MutantStack and populates it with integer values.
+ * It then tests the copy constructor by creating a new MutantStack initialized
+ * with the original. The elements of the copy-constructed stack are printed to
+ * verify that they match the original. Next, the test checks the assignment
+ * operator by assigning the original stack to a new MutantStack and printing
+ * the elements of the assigned stack to ensure they also match the original.
+ */
 void CopyAndAssignTest()
 {
 	SEPARATOR("Copy Constructor and Assignment Operator Test");
@@ -155,6 +208,14 @@ void CopyAndAssignTest()
 	std::cout << std::endl;
 }
 
+/**
+ * @brief Tests MutantStack with std::string type.
+ *
+ * This function pushes some std::string objects onto a MutantStack and then
+ * prints out the contents of the stack using an iterator.
+ *
+ * @see MutantStack class
+ */
 void DifferentTypeTest()
 {
 	SEPARATOR("Test with std::string Type");

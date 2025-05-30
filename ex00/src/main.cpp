@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:33:55 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/30 21:50:07 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/05/30 22:01:42 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,25 @@ void testNegativeValues();
 // ─────────────────────────────────────────────────────────────
 // 🚀 main()
 // ─────────────────────────────────────────────────────────────
+
+/**
+ * The main entry point of the program.
+ *
+ * Runs a series of tests to verify the correctness of the easyfind function.
+ *
+ * The tests cover the following scenarios:
+ *  - Searching a std::vector
+ *  - Searching a std::list
+ *  - Searching a std::deque
+ *  - Searching a std::vector for a value not in the container
+ *  - Searching an empty container
+ *  - Searching a container with duplicate values
+ *  - Searching a container with negative values
+ *
+ * After running all tests, prints a success message to the console.
+ *
+ * @return 0 if all tests pass, non-zero otherwise.
+ */
 int main()
 {
 	std::cout << BGRN "\n\n📋===== EASYFIND SIMULATION =====📋\n\n" RESET;
@@ -55,6 +74,20 @@ int main()
 // ─────────────────────────────────────────────────────────────
 // 🔧 Template function implementations (C++98 compliant)
 // ─────────────────────────────────────────────────────────────
+
+/**
+ * Tests the easyfind function.
+ *
+ * Prints a message to the console with the value found, the type of container
+ * used, and whether the value was found.
+ *
+ * If the value is not found, catch the EasyFindException and print an error
+ * message to the console.
+ *
+ * @param container The container to search in.
+ * @param value The value to search for.
+ * @param containerType A string representing the type of container.
+ */
 template <typename Container>
 void testEasyFind(const Container& container, int value, const std::string& containerType)
 {
@@ -73,6 +106,11 @@ void testEasyFind(const Container& container, int value, const std::string& cont
 // 🧪 Test Cases (C++98 syntax)
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * Tests easyfind with a std::vector<int>.
+ *
+ * Verifies that easyfind works correctly with an array-based container.
+ */
 void testVector()
 {
 	SEPARATOR("Testing with std::vector<int>");
@@ -81,6 +119,11 @@ void testVector()
 	testEasyFind(vec, 3, "vector");
 }
 
+/**
+ * Tests easyfind with a std::list<int>.
+ *
+ * Verifies that easyfind works correctly with a linked list.
+ */
 void testList()
 {
 	SEPARATOR("Testing with std::list<int>");
@@ -89,6 +132,11 @@ void testList()
 	testEasyFind(lst, 3, "list");
 }
 
+/**
+ * Tests easyfind with a std::deque<int>.
+ *
+ * Verifies that easyfind works correctly with a double-ended queue.
+ */
 void testDeque()
 {
 	SEPARATOR("Testing with std::deque<int>");
@@ -97,6 +145,12 @@ void testDeque()
 	testEasyFind(dq, 3, "deque");
 }
 
+/**
+ * Tests easyfind with a std::vector<int> where the value is not present.
+ *
+ * Verifies that easyfind throws an exception when the specified value
+ * is not found within the container.
+ */
 void testVectorNotFound()
 {
 	SEPARATOR("Testing with std::vector<int> (not found)");
@@ -105,6 +159,12 @@ void testVectorNotFound()
 	testEasyFind(vec, 6, "vector");
 }
 
+/**
+ * Tests easyfind with an empty std::vector<int>.
+ *
+ * Verifies that easyfind throws an exception when attempting to find a value
+ * in an empty container.
+ */
 void testEmptyContainer()
 {
 	SEPARATOR("Testing with empty std::vector<int>");
@@ -112,6 +172,12 @@ void testEmptyContainer()
 	testEasyFind(vec, 1, "empty vector");
 }
 
+/**
+ * Tests easyfind with a std::list containing duplicate values.
+ *
+ * Verifies that easyfind only returns the first occurrence of a value
+ * in a container, even if the value appears multiple times.
+ */
 void testDuplicateValues()
 {
 	SEPARATOR("Testing with std::list<int> (duplicates)");
@@ -120,6 +186,12 @@ void testDuplicateValues()
 	testEasyFind(lst, 3, "list with duplicates");
 }
 
+/**
+ * Tests easyfind with a std::deque containing negative values.
+ *
+ * Verifies that easyfind works correctly even when the container
+ * contains negative values.
+ */
 void testNegativeValues()
 {
 	SEPARATOR("Testing with std::deque<int> (negative values)");

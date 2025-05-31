@@ -128,12 +128,9 @@ size_t Span::longestSpan()
 	if (_numbers.size() < 2)
 		throw NotEnoughNumbersException();
 
-	std::pair
-	<std::vector<int>::iterator,
-	std::vector<int>::iterator>
-	minmax
-	= std::minmax_element(_numbers.begin(), _numbers.end());
-	return *minmax.second - *minmax.first;
+	std::vector<int>::iterator minIt = std::min_element(_numbers.begin(), _numbers.end());
+	std::vector<int>::iterator maxIt = std::max_element(_numbers.begin(), _numbers.end());
+	return *maxIt - *minIt;
 }
 
 /**

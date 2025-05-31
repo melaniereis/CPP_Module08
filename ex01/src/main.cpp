@@ -13,6 +13,7 @@
 #include "../inc/Span.hpp"
 #include "../inc/ansi.h"
 #include <iostream>
+#include <ctime>
 
 #define SEPARATOR(txt) std::cout << "\n"                                              \
 								<< BWHT "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"     \

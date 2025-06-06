@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:18:52 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/30 22:16:01 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/06/06 21:49:47 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ MutantStack<T, Container>::MutantStack(const MutantStack &other) : std::stack<T,
 /**
  * Destructor for MutantStack.
  *
- * Destroys a MutantStack object, releasing all resources allocated by the stack.
- *
- * @param T Type of the elements stored in the stack.
- * @param Container Container type used to store the elements.
+ * Default destructor. Automatically cleans up the underlying container.
  */
 template <typename T, typename Container>
 MutantStack<T, Container>::~MutantStack()
@@ -64,9 +61,7 @@ MutantStack<T, Container> &MutantStack<T, Container>::operator=(const MutantStac
 }
 
 /**
- * Returns an iterator pointing to the first element in the underlying container.
- *
- * @return An iterator pointing to the first element in the underlying container.
+ * @brief Forward iterator to the beginning of the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::iterator MutantStack<T, Container>::begin()
@@ -75,9 +70,7 @@ typename MutantStack<T, Container>::iterator MutantStack<T, Container>::begin()
 }
 
 /**
- * Returns an iterator pointing to the element after the last element in the underlying container.
- *
- * @return An iterator pointing to the element after the last element in the underlying container.
+ * @brief Forward iterator to the end of the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::iterator MutantStack<T, Container>::end()
@@ -86,9 +79,7 @@ typename MutantStack<T, Container>::iterator MutantStack<T, Container>::end()
 }
 
 /**
- * Returns a constant iterator pointing to the first element in the underlying container.
- *
- * @return A constant iterator pointing to the first element in the underlying container.
+ * @brief Constant forward iterator to the beginning of the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::begin() const
@@ -97,9 +88,7 @@ typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::be
 }
 
 /**
- * Returns a constant iterator pointing to the element after the last element in the underlying container.
- *
- * @return A constant iterator pointing to the element after the last element in the underlying container.
+ * @brief Constant forward iterator to the end of the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::end() const
@@ -108,9 +97,7 @@ typename MutantStack<T, Container>::const_iterator MutantStack<T, Container>::en
 }
 
 /**
- * Returns a reverse iterator pointing to the last element in the underlying container.
- *
- * @return A reverse iterator pointing to the last element in the underlying container.
+ * @brief Returns a reverse iterator pointing to the last element in the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::reverse_iterator MutantStack<T, Container>::rbegin()
@@ -119,9 +106,7 @@ typename MutantStack<T, Container>::reverse_iterator MutantStack<T, Container>::
 }
 
 /**
- * Returns a reverse iterator pointing to the element before the first element in the underlying container.
- *
- * @return A reverse iterator pointing to the element before the first element in the underlying container.
+ * @brief Returns a reverse iterator pointing to the element before the first element in the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::reverse_iterator MutantStack<T, Container>::rend()
@@ -130,9 +115,7 @@ typename MutantStack<T, Container>::reverse_iterator MutantStack<T, Container>::
 }
 
 /**
- * Returns a constant reverse iterator pointing to the last element in the underlying container.
- *
- * @return A constant reverse iterator pointing to the last element in the underlying container.
+ * @brief Returns a constant reverse iterator pointing to the last element in the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::const_reverse_iterator MutantStack<T, Container>::rbegin() const
@@ -141,9 +124,7 @@ typename MutantStack<T, Container>::const_reverse_iterator MutantStack<T, Contai
 }
 
 /**
- * Returns a constant reverse iterator pointing to the element before the first element in the underlying container.
- *
- * @return A constant reverse iterator pointing to the element before the first element in the underlying container.
+ * @brief Returns a constant reverse iterator pointing to the element before the first element in the underlying container.
  */
 template <typename T, typename Container>
 typename MutantStack<T, Container>::const_reverse_iterator MutantStack<T, Container>::rend() const

@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:33:55 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/30 22:10:47 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/06/06 21:44:10 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 								<< std::endl;
 
 // Forward declarations of test functions
-void BasicSpanTest();
+
+void SubjectTest();
 void RangeInsertionTest();
 void OverflowTest();
 void NotEnoughNumbersTest();
@@ -61,7 +62,7 @@ int main()
 	std::cout << BGRN "\n\n📋===== SPAN SIMULATION =====📋\n\n" RESET;
 	std::srand(std::time(0));  // Seed for random number generation
 
-	BasicSpanTest();
+	SubjectTest();
 	RangeInsertionTest();
 	OverflowTest();
 	NotEnoughNumbersTest();
@@ -106,32 +107,6 @@ void SubjectTest()
 }
 
 // Test function definitions
-
-/**
- * Verifies the correctness of the Span class by performing a basic test.
- *
- * The test creates a Span of size 5, adds 5 numbers to it, and then verifies
- * that the correct shortest and longest spans are calculated.
- */
-void BasicSpanTest()
-{
-	SEPARATOR("Basic Span Test");
-	try
-	{
-		Span sp(5);
-		sp.addNumber(6);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
-		std::cout << sp;
-		std::cout << GRN "Shortest Span: " << RESET << sp.shortestSpan() << "\n";
-		std::cout << GRN "Longest Span:  " << RESET << sp.longestSpan() << "\n";
-	} catch (std::exception& e)
-	{
-		std::cerr << RED "Unexpected Error: " << e.what() << RESET << std::endl;
-	}
-}
 
 /**
  * Verifies the correctness of the Span class by inserting a range of numbers.

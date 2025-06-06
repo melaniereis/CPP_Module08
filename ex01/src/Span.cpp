@@ -6,7 +6,7 @@
 /*   By: meferraz <meferraz@student.42porto.pt>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:07:25 by meferraz          #+#    #+#             */
-/*   Updated: 2025/05/30 22:06:04 by meferraz         ###   ########.fr       */
+/*   Updated: 2025/06/06 21:42:17 by meferraz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ void Span::addNumber(int number)
 void Span::addRangeNumbers(std::vector<int>::iterator begin,
 							std::vector<int>::iterator end)
 {
-	unsigned int distance = 0;
-	for (std::vector<int>::iterator it = begin; it != end; ++it)
-		distance++;
+	unsigned int distance = std::distance(begin, end);
+	if (distance == 0)
+		return; // No numbers to add, nothing to do
 	if (_numbers.size() + distance > _size)
 		throw FullException();
 	_numbers.insert(_numbers.end(), begin, end);

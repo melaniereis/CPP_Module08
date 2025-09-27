@@ -397,3 +397,5 @@ void testSpan()
 ---
 
 *Module 08 successfully bridges the gap between basic C++ knowledge and professional-level template programming, providing the foundation for advanced STL usage and generic programming techniques.*
+
+**Module 08 Complete** ✨ | **Previous**: [← Module 07](https://github.com/melaniereis/CPP_Module07/) | **Next**: [Module 09 →](https://github.com/melaniereis/CPP_Module09/)
